@@ -8,7 +8,7 @@ var Drawer = function(ctx) {
 
 Drawer.prototype.redrawTop = function(text, x, y, bgColor) {
   this.ctx.setTransform(1, 0, 0, 1, 0, 0);
-  this.ctx.font = '100px notobk';
+  this.ctx.font = '100px ywzh';
 
   switch(bgColor) {
     case `white`:
@@ -107,7 +107,7 @@ Drawer.prototype.redrawTop = function(text, x, y, bgColor) {
 
 Drawer.prototype.redrawBottom = function(text, x, y, bgColor) {
   this.ctx.setTransform(1, 0, 0, 1, 0, 0);
-  this.ctx.font = '100px notoserifbk';
+  this.ctx.font = '100px ywzs';
 
   if (bgColor === `white`) {
     this.ctx.fillStyle = bgColor;

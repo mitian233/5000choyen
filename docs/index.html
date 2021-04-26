@@ -1,19 +1,19 @@
 ﻿<!DOCTYPE html>
-<html lang="ja">
+<html lang="zh-cn">
 
 <head>
 	<meta charset="utf-8">
-	<title>5000兆円ジェネレーター super</title>
-	<meta name="description" content="今、話題の5000兆円。そんな5000兆円のような画像を生成できる5000兆円ジェネレーターです。好きな文字を入れて素敵な5000兆円ライフを楽しもう！" />
+	<title>5000兆円 Generator Super</title>
+	<meta name="description" content="5000兆円是现在的一个热门的meme。这是5000兆円的生成器，可以将其更改成你想要的任何文字。" />
 	<style type="text/css">
 		@font-face {
-			font-family: 'notobk';
-			src: url('notobk-subset.otf') format('opentype');
+			font-family: 'ywzh';
+			src: url('ywzh.otf') format('opentype');
 		}
 
 		@font-face {
-			font-family: 'notoserifbk';
-			src: url('notoserifbk-subset.otf') format('opentype');
+			font-family: 'ywzs';
+			src: url('ywzs.otf') format('opentype');
 		}
 
 		div {
@@ -56,16 +56,17 @@
 </head>
 
 <body>
-	<h1>5000兆円ジェネレーター super</h1>
+	<h1>5000兆円 Generater super</h1>
 	<div>
 		<p>
 			<span>
 				<!-- eslint-disable -->
-				5000兆円風の画像を生成するツールです。<font color="blue">`欲しい!`</font> も生成できます。
+				这是“5000兆円”风格的表情生成器。这个版本<font color="blue">`欲しい!`</font> 也可以生成。
 			</span>
 		</p>
 		<hr>
 		<div>
+			这是一个GitHub上开源的项目
 			<h4>Contributor</h4>
 			<span>
 				作者:
@@ -80,7 +81,7 @@
 
 		<div>
 			<h4>Changelog</h4>
-			<p><font color="blue">2018-06-10: 404 NotFound が表示される問題に対応しました</font></p>
+			<p><font color="blue">2021-04-26: 中文本地化时替换了日文字体（改为攸望字体，作者晨未）</font></p>
 
 		</div>
 		<hr>
@@ -93,35 +94,35 @@
 		<canvas id="canvas2" width="1500px" height="300px" style="display: none"></canvas>
 	</div>
 	<div class="text-order">
-		<font color="blue">`欲しい!`</font> の描画に
+		在 <font color="blue">`欲しい!`</font> 的位置
 		<input id="bar1" type="radio" name="text-order" value="image">
-		<label for="bar1">元ネタの画像を使う</label>
+		<label for="bar1">不做更改</label>
 		<input id="bar2" type="radio" name="text-order" value="text" checked>
-		<label for="bar2">文字を生成する</label>
+		<label for="bar2">自行定义文字内容</label>
 	</div>
 	<div class="background-order">
-		画像を保存するとき背景色を
+		设置保存图像的背景
 		<input id="bar3" type="radio" name="background-order" value="transparent">
-		<label for="bar3">透明にする</label>
+		<label for="bar3">透明色</label>
 		<input id="bar4" type="radio" name="background-order" value="white" checked>
-		<label for="bar4">白にする</label>
+		<label for="bar4">白色</label>
 	</div>
 	<div>
-		<span id="labelTop">赤色の文字</span>
+		<span id="labelTop">第一行文字（红色）</span>
 		<input type="text" id="textboxTop" size="50" value="" spellcheck="false" oninput="_canvas.redrawTop();">
 		<br>
-		<span id="labelBottom">銀色の文字</span>
+		<span id="labelBottom">第二行文字（白色）</span>
 		<input type="text" id="textboxBottom" size="50" value="" spellcheck="false" oninput="_canvas.redrawBottom();">
 	</div>
 	<div>
-		<button type="button" onclick="_canvas.save();">画像を保存する</button>
-		<button type="button" onclick="_canvas.newtab();">画像を新しいタブで開く</button>
+		<button type="button" onclick="_canvas.save();">保存图片</button>
+		<button type="button" onclick="_canvas.newtab();">在新窗口打开图片</button>
 	</div>
 	<div>
 		<hr>
 
 		<p>
-			`欲しい!` はドラッグできます。
+			第二行文字是可以拖动的
 			<br>
 			<video autoplay loop muted style="max-width:600px">
 				<source src="demo.mp4" type="video/mp4">
@@ -132,7 +133,7 @@
 
 	</div>
 	<div>
-		ソースコード:
+		源码:
 		<a href="https://github.com/yurafuca/5000choyen">yurafuca/5000choyen</a>
 	</div>
 
