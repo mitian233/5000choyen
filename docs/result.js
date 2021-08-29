@@ -1,5 +1,5 @@
-var fontA = new FontFaceObserver('fzltdh');
-var fontB = new FontFaceObserver('fzcs');
+var fontA = new FontFaceObserver('Noto Sans SC');
+var fontB = new FontFaceObserver('Noto Serif SC');
 
 Promise.all([fontA.load(), fontB.load()]).then(function () {
   const queries = window.location.href.split('?')[1];
