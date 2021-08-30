@@ -60,116 +60,116 @@
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-190584506-1"></script>
 	<script>
-  		window.dataLayer = window.dataLayer || [];
-  		function gtag(){dataLayer.push(arguments);}
-  		gtag('js', new Date());
-  		gtag('config', 'UA-190584506-1');
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-190584506-1');
 	</script>
 	<script data-ad-client="ca-pub-9004116390026603" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 </head>
 
-<body onload="setjp()">
-	<h1 id="title">5000兆円表情包生成器</h1>
+<body>
+<h1 id="title">5000兆円表情包生成器</h1>
+<div>
+	<p>
+		<!-- eslint-disable -->
+	<p id="subtitle">这是“5000兆円”风格的表情生成器。这个版本<span style="color: blue; ">`欲しい!`</span> 也可以生成。</p>
+	</p>
+	<button type="button" onclick="setjp()">
+		日本語
+	</button>
+	<button type="button" onclick="setsc()">
+		中文（简体）
+	</button>
+	<button type="button" onclick="settc()">
+		中文（繁體）
+	</button>
+	<hr>
 	<div>
-		<p>
-			<!-- eslint-disable -->
-			<p id="subtitle">这是“5000兆円”风格的表情生成器。这个版本<span style="color: blue; ">`欲しい!`</span> 也可以生成。</p>
+		<p id="intro1">这是一个GitHub上开源的项目</p>
+		<h4 id="contributor1">Contributor</h4>
+		<p id="contributor2">
+			作者:
+			<a href="https://twitter.com/yurafuca">@yurafuca</a>，
 		</p>
-		<button type="button" onclick="setjp()">
-			日本語
-		</button>
-		<button type="button" onclick="setsc()">
-			中文（简体）
-		</button>
-		<button type="button" onclick="settc()">
-			中文（繁體）
-		</button>
-		<hr>
-		<div>
-			<p id="intro1">这是一个GitHub上开源的项目</p>
-			<h4 id="contributor1">Contributor</h4>
-			<p id="contributor2">
-				作者:
-				<a href="https://twitter.com/yurafuca">@yurafuca</a>，
-			</p>
-			<p id="contributor3">
-				原作者:
-				<a href="https://twitter.com/rarity_rare25">@rarity_rare25</a>（<a href="https://rare25.github.io/5000choyen/">5000兆円ジェネレーター</a>）
-			</p>
-		</div>
-		<hr>
-2
-		<div>
-			<h4 id="changelog1">Changelog</h4>
-			<p id="changelog2"><span style="color: blue; ">2021-08-29: 由于加载速度过慢的问题，弃用方正字库而替换了谷歌字体（思源黑体和思源宋体）。若遇到字体显示不正常，请在文末反复增减一个空格以手动刷新canvas。</span></p>
-
-		</div>
-		<hr>
-
-	</div>
-	<div>
-		<canvas id="canvas" width="1500px" height="280px"></canvas>
-	</div>
-	<div>
-		<canvas id="canvas2" width="1500px" height="300px" style="display: none"></canvas>
-	</div>
-	<div class="text-order">
-		<p id="text1">在 <span style="color: blue; ">`欲しい!`</span> 的位置</p>
-		<input id="bar1" type="radio" name="text-order" value="image">
-		<label for="bar1" id="label1">不做更改</label>
-		<input id="bar2" type="radio" name="text-order" value="text" checked>
-		<label for="bar2" id="label2">自行定义文字内容</label>
-	</div>
-	<div class="background-order">
-		<p id="text2">设置保存图像的背景</p>
-		<input id="bar3" type="radio" name="background-order" value="transparent">
-		<label for="bar3" id="label3">透明色</label>
-		<input id="bar4" type="radio" name="background-order" value="white" checked>
-		<label for="bar4" id="label4">白色</label>
-	</div>
-	<div>
-		<p id="labelTop">第一行文字（红色）</p>
-		<input type="text" id="textboxTop" size="50" value="" spellcheck="false" oninput="_canvas.redrawTop();">
-		<br>
-		<p id="labelBottom">第二行文字（白色）</p>
-		<input type="text" id="textboxBottom" size="50" value="" spellcheck="false" oninput="_canvas.redrawBottom();">
-	</div>
-	<div>
-		<button type="button" onclick="_canvas.save();" id="savebutton">保存图片</button>
-		<button type="button" onclick="_canvas.newtab();" id="newtabbutton">在新窗口打开图片</button>
-	</div>
-	<div>
-		<hr>
-
-		<p>
-			<p id="ps">第二行文字是可以拖动的</p>
-			<br>
-			<video autoplay loop muted style="max-width:600px">
-				<source src="demo.mp4" type="video/mp4">
-				<source src="demo.webm" type="video/webm">
-			</video>
-		</p>
-		<hr>
-
-	</div>
-	<div>
-		<p id="source">
-			源码:<a href="https://github.com/mitian233/5000choyen">mitian233/5000choyen</a>
+		<p id="contributor3">
+			原作者:
+			<a href="https://twitter.com/rarity_rare25">@rarity_rare25</a>（<a href="https://rare25.github.io/5000choyen/">5000兆円ジェネレーター</a>）
 		</p>
 	</div>
+	<hr>
+	2
 	<div>
+		<h4 id="changelog1">Changelog</h4>
+		<p id="changelog2"><span style="color: blue; ">2021-08-29: 由于加载速度过慢的问题，弃用方正字库而替换了谷歌字体（思源黑体和思源宋体）。若遇到字体显示不正常，请在文末反复增减一个空格以手动刷新canvas。</span></p>
+
+	</div>
+	<hr>
+
+</div>
+<div>
+	<canvas id="canvas" width="1500px" height="280px"></canvas>
+</div>
+<div>
+	<canvas id="canvas2" width="1500px" height="300px" style="display: none"></canvas>
+</div>
+<div class="text-order">
+	<p id="text1">在 <span style="color: blue; ">`欲しい!`</span> 的位置</p>
+	<input id="bar1" type="radio" name="text-order" value="image">
+	<label for="bar1" id="label1">不做更改</label>
+	<input id="bar2" type="radio" name="text-order" value="text" checked>
+	<label for="bar2" id="label2">自行定义文字内容</label>
+</div>
+<div class="background-order">
+	<p id="text2">设置保存图像的背景</p>
+	<input id="bar3" type="radio" name="background-order" value="transparent">
+	<label for="bar3" id="label3">透明色</label>
+	<input id="bar4" type="radio" name="background-order" value="white" checked>
+	<label for="bar4" id="label4">白色</label>
+</div>
+<div>
+	<p id="labelTop">第一行文字（红色）</p>
+	<input type="text" id="textboxTop" size="50" value="" spellcheck="false" oninput="_canvas.redrawTop();">
+	<br>
+	<p id="labelBottom">第二行文字（白色）</p>
+	<input type="text" id="textboxBottom" size="50" value="" spellcheck="false" oninput="_canvas.redrawBottom();">
+</div>
+<div>
+	<button type="button" onclick="_canvas.save();" id="savebutton">保存图片</button>
+	<button type="button" onclick="_canvas.newtab();" id="newtabbutton">在新窗口打开图片</button>
+</div>
+<div>
+	<hr>
+
+	<p>
+	<p id="ps">第二行文字是可以拖动的</p>
+	<br>
+	<video autoplay loop muted style="max-width:600px">
+		<source src="demo.mp4" type="video/mp4">
+		<source src="demo.webm" type="video/webm">
+	</video>
+	</p>
+	<hr>
+
+</div>
+<div>
+	<p id="source">
+		源码:<a href="https://github.com/mitian233/5000choyen">mitian233/5000choyen</a>
+	</p>
+</div>
+<div>
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9004116390026603"
-		crossorigin="anonymous"></script>
+			crossorigin="anonymous"></script>
 	<!-- generator -->
 	<ins class="adsbygoogle"
-     		style="display:block"
-     		data-ad-client="ca-pub-9004116390026603"
-     		data-ad-slot="9485446853"
-     		data-ad-format="auto"
-     		data-full-width-responsive="true"></ins>
+		 style="display:block"
+		 data-ad-client="ca-pub-9004116390026603"
+		 data-ad-slot="9485446853"
+		 data-ad-format="auto"
+		 data-full-width-responsive="true"></ins>
 	<script>
-     		(adsbygoogle = window.adsbygoogle || []).push({});
+		(adsbygoogle = window.adsbygoogle || []).push({});
 	</script>
 </div>
 
