@@ -2,177 +2,255 @@
 <html lang="zh-cn">
 
 <head>
-	<link rel="stylesheet" type="text/css" href="mystyle.css">
-	<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>-->
-	<meta charset="utf-8">
-	<title id="pagetitle">5000兆円表情包生成器</title>
-	<meta name="description" content="5000兆円是现在的一个热门的meme。这是5000兆円的生成器，可以将其更改成你想要的任何文字。" />
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700&family=Noto+Serif+SC:wght@900&display=swap" rel="stylesheet">
-	<script src="translate.js"></script>
-	<style type="text/css">
-		@font-face {
-			font-family: 'Noto Sans SC', sans-serif;
-		}
+    <!--<link rel="stylesheet" type="text/css" href="mystyle.css"/>-->
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>-->
+    <meta charset="utf-8">
+    <title id="pagetitle">5000兆円表情包生成器</title>
+    <meta name="description" content="5000兆円是现在的一个热门的meme。这是5000兆円的生成器，可以将其更改成你想要的任何文字。"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@700&family=Noto+Serif+SC:wght@900&display=swap"
+          rel="stylesheet">
+    <script src="translate.js"></script>
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css"
+            integrity="sha384-cLRrMq39HOZdvE0j6yBojO4+1PrHfB7a9l5qLcmRm/fiWXYY+CndJPmyu5FV/9Tw"
+            crossorigin="anonymous"
+    />
+    <script
+            src="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/js/mdui.min.js"
+            integrity="sha384-gCMZcshYKOGRX9r6wbDrvF+TcCCswSHFucUzUPwka+Gr+uHgjlYvkABr95TCOz3A"
+            crossorigin="anonymous"
+    ></script>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Noto Sans SC', sans-serif;
+        }
 
-		@font-face {
-			font-family: 'Noto Serif SC', serif;
-		}
+        @font-face {
+            font-family: 'Noto Serif SC', serif;
+        }
 
-		div {
-			display: block;
-			margin: 10px 0;
-		}
+    </style>
+    <script src="settings.js"></script>
+    <script src="generator.js"></script>
+    <script src="drawer.js"></script>
+    <script src="hoshii.js"></script>
+    <!--<script src="canvasImage.js"></script>-->
+    <script src="canvas.js"></script>
+    <script src="main.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-190584506-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-		input[type="radio"] {
-			display: none;
-		}
+        function gtag() {
+            dataLayer.push(arguments);
+        }
 
-		label {
-			display: inline-block;
-			color: black;
-			background-color: lightgray;
-			padding: 3px 10px;
-		}
-
-		.text-order {
-			/* display: none; */
-		}
-
-		.text-order input[type="radio"]:checked+label {
-			color: white !important;
-			background-color: blue !important;
-		}
-
-		.background-order input[type="radio"]:checked+label {
-			color: white;
-			background-color: black;
-		}
-	</style>
-	<script src="settings.js"></script>
-	<script src="generator.js"></script>
-	<script src="drawer.js"></script>
-	<script src="hoshii.js"></script>
-	<!--<script src="canvasImage.js"></script>-->
-	<script src="canvas.js"></script>
-	<script src="main.js"></script>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-190584506-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		gtag('config', 'UA-190584506-1');
-	</script>
-	<script data-ad-client="ca-pub-9004116390026603" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        gtag('js', new Date());
+        gtag('config', 'UA-190584506-1');
+    </script>
+    <script data-ad-client="ca-pub-9004116390026603" async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 </head>
+<body class="mdui-theme-primary-indigo mdui-theme-accent-pink mdui-drawer-body-left mdui-appbar-with-toolbar">
+<header class="mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide " id="content-header">
+    <div class="mdui-toolbar mdui-color-theme">
+        <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white"
+              mdui-drawer="{target: '#content-drawer', swipe: true}"><i class="mdui-icon material-icons">menu</i></span>
+        <a href="" class="mdui-typo-headline mdui-hidden-xs">5000ChoyenGenerator</a>
+        <div class="mdui-toolbar-spacer"></div>
+        <a href="javascript:location.reload(true);" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">refresh</i></a>
+        <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white"
+              mdui-menu="{target: '#menu1'}"><i class="mdui-icon material-icons">more_vert</i></span>
+        <ul class="mdui-menu mdui-menu-cascade" id="menu1">
+            <li class="mdui-menu-item">
+                <a href="javascript:location.reload(true);" class="mdui-ripple">
+                    <i class="mdui-menu-item-icon mdui-icon material-icons">refresh</i>Refresh</a>
+            </li>
+            <li class="mdui-menu-item">
+                <a href="https://github.com/mitian233/5000choyen">
+                    <i class="mdui-menu-item-icon mdui-icon material-icons">code</i>Source Code</a>
+            </li>
+            <li class="mdui-divider"></li>
+            <li class="mdui-menu-item">
+                <a href="javascript:setjp();" class="mdui-ripple">
+                    <i class="mdui-menu-item-icon mdui-icon material-icons">translate</i>Japanese</a>
+            </li>
+            <li class="mdui-menu-item">
+                <a href="javascript:setsc();" class="mdui-ripple">
+                    <i class="mdui-menu-item-icon"></i>Simplified Chinese</a>
+            </li>
+            <li class="mdui-menu-item">
+                <a href="javascript:settc();" class="mdui-ripple">
+                    <i class="mdui-menu-item-icon"></i>Traditional Chinese</a>
+            </li>
+        </ul>
+    </div>
+</header>
 
-<body>
-<h1 id="title">5000兆円表情包生成器</h1>
-<div>
-	<p>
-		<!-- eslint-disable -->
-	<p id="subtitle">这是“5000兆円”风格的表情生成器。这个版本<span style="color: blue; ">`欲しい!`</span> 也可以生成。</p>
-	</p>
-	<button type="button" onclick="setjp()">
-		日本語
-	</button>
-	<button type="button" onclick="setsc()">
-		中文（简体）
-	</button>
-	<button type="button" onclick="settc()">
-		中文（繁體）
-	</button>
-	<hr>
-	<div>
-		<p id="intro1">这是一个GitHub上开源的项目</p>
-		<h4 id="contributor1">Contributor</h4>
-		<p id="contributor2">
-			作者:
-			<a href="https://twitter.com/yurafuca">@yurafuca</a>，
-		</p>
-		<p id="contributor3">
-			原作者:
-			<a href="https://twitter.com/rarity_rare25">@rarity_rare25</a>（<a href="https://rare25.github.io/5000choyen/">5000兆円ジェネレーター</a>）
-		</p>
-	</div>
-	<hr>
-	2
-	<div>
-		<h4 id="changelog1">Changelog</h4>
-		<p id="changelog2"><span style="color: blue; ">2021-08-29: 由于加载速度过慢的问题，弃用方正字库而替换了谷歌字体（思源黑体和思源宋体）。若遇到字体显示不正常，请在文末反复增减一个空格以手动刷新canvas。</span></p>
+<div class="mdui-drawer mdui-drawer-close" id="content-drawer">
+    <ul class="mdui-list" mdui-collapse="{accordion: true}">
+        <li class="mdui-subheader">Main</li>
+        <a href="https://bangdream.moe">
+            <li class="mdui-list-item mdui-ripple">
+                <i class="mdui-list-item-icon mdui-icon material-icons">home</i>
+                <div class="mdui-list-item-content">Home Page</div>
+            </li>
+        </a>
+        <li class="mdui-subheader">More</li>
+        <a href="mailto:mitian233@outlook.com">
+            <li class="mdui-list-item mdui-ripple">
+                <i class="mdui-list-item-icon mdui-icon material-icons">email</i>
+                <div class="mdui-list-item-content">Contact Me</div>
+            </li>
+        </a>
+        <li class="mdui-collapse-item mdui-collapse-item-open">
+            <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                <i class="mdui-list-item-icon mdui-icon material-icons">link</i>
+                <div class="mdui-list-item-content">Links</div>
+                <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_down</i>
+            </div>
+            <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                <a href="http://yurafuca.com/5000choyen/">
+                    <li class="mdui-list-item mdui-ripple">Original Project</li>
+                </a>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="mdui-container" id="content-main">
+    <div class="mdui-typo">
+        <h1 id="title">5000兆円表情包生成器</h1>
+        <div>
+            <p>
+                <!-- eslint-disable -->
+            <p id="subtitle">这是“5000兆円”风格的表情生成器。这个版本<span style="color: blue; ">`欲しい!`</span> 也可以生成。</p>
+            </p>
+            <button type="button" class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent"
+                    onclick="setjp()">
+                日本語
+            </button>
+            <button type="button" class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent"
+                    onclick="setsc()">
+                中文（简体）
+            </button>
+            <button type="button" class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent"
+                    onclick="settc()">
+                中文（繁體）
+            </button>
 
-	</div>
-	<hr>
+            <hr>
+            <div>
+                <p id="intro1">这是一个GitHub上开源的项目</p>
+                <h4 id="contributor1">Contributor</h4>
+                <p id="contributor2">
+                    作者:<a href="https://twitter.com/yurafuca">@yurafuca</a>，
+                </p>
+                <p id="contributor3">
+                    原作者:<a href="https://twitter.com/rarity_rare25">@rarity_rare25</a>（<a
+                        href="https://rare25.github.io/5000choyen/">5000兆円ジェネレーター</a>）
+                </p>
+            </div>
+            <hr>
+            2
+            <div>
+                <h4 id="changelog1">Changelog</h4>
+                <p id="changelog2"><span style="color: blue; ">2021-08-29: 由于加载速度过慢的问题，弃用方正字库而替换了谷歌字体（思源黑体和思源宋体）。若遇到字体显示不正常，请在文末反复增减一个空格以手动刷新canvas。</span>
+                </p>
+            </div>
+            <hr>
+        </div>
+        <div>
+            <canvas id="canvas" width="1000px" height="280px"></canvas>
+        </div>
+        <div>
+            <canvas id="canvas2" width="1000px" height="300px" style="display: none"></canvas>
+        </div>
+        <div class="text-order">
+            <p id="text1">在 <span style="color: blue; ">`欲しい!`</span> 的位置</p>
+            <label class="mdui-radio">
+                <input id="bar1" type="radio" name="text-order" value="image">
+                <i class="mdui-radio-icon" for="bar1" id="label1"></i>
+                <p id="lb1">不做更改</p></label>
+            <label class="mdui-radio">
+                <input id="bar2" type="radio" name="text-order" value="text" checked>
+                <i class="mdui-radio-icon" for="bar2" id="label2"></i>
+                <p id="lb2">自行定义文字内容</p>
+            </label>
+        </div>
+        <div class="background-order">
+            <p id="text2">设置保存图像的背景</p>
+            <label class="mdui-radio">
+                <input id="bar3" type="radio" name="background-order" value="transparent">
+                <i class="mdui-radio-icon" for="bar3" id="label3"></i>
+                <p id="lb3">透明色</p></label>
+            <label class="mdui-radio">
+                <input id="bar4" type="radio" name="background-order" value="white" checked>
+                <i class="mdui-radio-icon" for="bar4" id="label4"></i>
+                <p id="lb4">白色</p>
+            </label>
+        </div>
+        <div>
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <label class="mdui-textfield-label" id="labelTop">第一行文字（红色）</label>
+                <input class="mdui-textfield-input" type="text" id="textboxTop" size="50" value="" spellcheck="false"
+                       oninput="_canvas.redrawTop();"/>
+            </div>
+            <div class="mdui-textfield mdui-textfield-floating-label">
+                <label class="mdui-textfield-label" id="labelBottom">第二行文字（白色）</label>
+                <input class="mdui-textfield-input" type="text" id="textboxBottom" size="50" value="" spellcheck="false"
+                       oninput="_canvas.redrawBottom();">
+            </div>
+        </div>
+        <div>
+            <button type="button" onclick="_canvas.save();"
+                    class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" id="savebutton">保存图片
+            </button>
+            <button type="button" onclick="_canvas.newtab();"
+                    class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent" id="newtabbutton">在新窗口打开图片
+            </button>
+        </div>
+        <div>
+            <hr>
 
-</div>
-<div>
-	<canvas id="canvas" width="1500px" height="280px"></canvas>
-</div>
-<div>
-	<canvas id="canvas2" width="1500px" height="300px" style="display: none"></canvas>
-</div>
-<div class="text-order">
-	<p id="text1">在 <span style="color: blue; ">`欲しい!`</span> 的位置</p>
-	<input id="bar1" type="radio" name="text-order" value="image">
-	<label for="bar1" id="label1">不做更改</label>
-	<input id="bar2" type="radio" name="text-order" value="text" checked>
-	<label for="bar2" id="label2">自行定义文字内容</label>
-</div>
-<div class="background-order">
-	<p id="text2">设置保存图像的背景</p>
-	<input id="bar3" type="radio" name="background-order" value="transparent">
-	<label for="bar3" id="label3">透明色</label>
-	<input id="bar4" type="radio" name="background-order" value="white" checked>
-	<label for="bar4" id="label4">白色</label>
-</div>
-<div>
-	<p id="labelTop">第一行文字（红色）</p>
-	<input type="text" id="textboxTop" size="50" value="" spellcheck="false" oninput="_canvas.redrawTop();">
-	<br>
-	<p id="labelBottom">第二行文字（白色）</p>
-	<input type="text" id="textboxBottom" size="50" value="" spellcheck="false" oninput="_canvas.redrawBottom();">
-</div>
-<div>
-	<button type="button" onclick="_canvas.save();" id="savebutton">保存图片</button>
-	<button type="button" onclick="_canvas.newtab();" id="newtabbutton">在新窗口打开图片</button>
-</div>
-<div>
-	<hr>
+            <p>
+            <p id="ps">第二行文字是可以拖动的</p>
+            <br>
+            <video autoplay loop muted style="max-width:600px">
+                <source src="demo.mp4" type="video/mp4">
+                <source src="demo.webm" type="video/webm">
+            </video>
+            </p>
+            <hr>
 
-	<p>
-	<p id="ps">第二行文字是可以拖动的</p>
-	<br>
-	<video autoplay loop muted style="max-width:600px">
-		<source src="demo.mp4" type="video/mp4">
-		<source src="demo.webm" type="video/webm">
-	</video>
-	</p>
-	<hr>
+        </div>
+        <div class="mdui-color-theme" id="content-footer">
+            <p id="source">
+                源码:<a href="https://github.com/mitian233/5000choyen">mitian233/5000choyen</a>
+            </p>
+        </div>
 
+        <div>
+            <script async
+                    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9004116390026603"
+                    crossorigin="anonymous"></script>
+            <!-- generator -->
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-9004116390026603"
+                 data-ad-slot="9485446853"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </div>
 </div>
-<div>
-	<p id="source">
-		源码:<a href="https://github.com/mitian233/5000choyen">mitian233/5000choyen</a>
-	</p>
-</div>
-<div>
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9004116390026603"
-			crossorigin="anonymous"></script>
-	<!-- generator -->
-	<ins class="adsbygoogle"
-		 style="display:block"
-		 data-ad-client="ca-pub-9004116390026603"
-		 data-ad-slot="9485446853"
-		 data-ad-format="auto"
-		 data-full-width-responsive="true"></ins>
-	<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-	</script>
-</div>
-
 </body>
 
 </html>
